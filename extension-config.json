@@ -1,0 +1,79 @@
+{
+  "version": "1.0.0-beta.6",
+  "id": "@shopgate-project/app-update",
+  "components": [
+    {
+      "id": "AppUpdate",
+      "type": "portals",
+      "path": "frontend/portals/AppUpdate",
+      "target": "app.globals"
+    }
+  ],
+  "configuration": {
+    "popup": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "enabled": true,
+        "headline": "",
+        "htmlContent": "",
+        "buttonDismissText": "Later"
+      },
+      "params": {
+        "type": "json",
+        "label": "Popup that appears when an app update is required."
+      }
+    },
+    "fullPageOverlay": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "enabled": false,
+        "shopLogoUrl": "",
+        "showShopLogo": true,
+        "headline": "",
+        "htmlContent": ""
+      },
+      "params": {
+        "type": "json",
+        "label": "Overlay that covers the entire page."
+      }
+    },
+    "storeLinks": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "ios": "",
+        "android": ""
+      },
+      "params": {
+        "type": "json",
+        "label": "The links to the app stores for iOS and Android."
+      }
+    },
+    "buttonStoreText": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "ios": "App Store",
+        "android": "Google Play Store"
+      },
+      "params": {
+        "type": "json",
+        "label": "The text shown on the app store buttons."
+      }
+    },
+    "minRequiredAppVersion": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "ios": "",
+        "android": ""
+      },
+      "params": {
+        "type": "json",
+        "label": "The minimum required versions for the app to continue."
+      }
+    }
+  }
+}
