@@ -42,6 +42,7 @@ const PageOverlay = ({
       classes={{
         content: styles.modalContent,
         layout: styles.modalLayout,
+        container: styles.modalContainer,
       }}
     >
       <Grid

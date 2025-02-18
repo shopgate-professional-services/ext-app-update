@@ -45,7 +45,7 @@ const PopUp = ({
   const handleClose = useCallback(() => setShowPopup(false), []);
 
   return (
-    showPopup ? (
+    showPopup && storeLink && buttonStoreLabel ? (
       <Dialog
         onConfirm={handleConfirm}
         onDismiss={handleClose}
