@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { IS_PAGE_PREVIEW_ACTIVE } from '@shopgate/engage/page/constants';
 import PageOverlay from '../../components/PageOverlay';
 import PopUp from '../../components/PopUp';
 import connect from './connector';
-import {
+import config from '../../config.json';
+
+const {
   popup,
   fullPageOverlay,
   storeLinks,
   buttonStoreText,
   minRequiredAppVersion,
-} from '../../config';
+} = config;
 
 /**
  * Compares two version strings to determine if the current app version is lower
@@ -37,7 +40,7 @@ const AppUpdate = ({ appVersion, isIosDevice }) => {
     ? minRequiredAppVersion?.ios || null
     : minRequiredAppVersion?.android || null;
 
-  if (!minVersion || !isVersionLower(appVersion, minVersion)) return null;
+  if (IS_PAGE_PREVIEW_ACTIVE || !minVersion || !isVersionLower(appVersion, minVersion)) return null;
 
   if (popup.enabled) {
     return (
